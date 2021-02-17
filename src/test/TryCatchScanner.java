@@ -1,5 +1,6 @@
 package test;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TryCatchScanner {
@@ -16,9 +17,14 @@ public class TryCatchScanner {
 		try {
 			int number = scan.nextInt();
 			System.out.println(number);
-		}catch(Exception e) {
-			System.out.println("You must input a valid number!");
-		}
-	}
 
+		}catch(InputMismatchException e) {
+			System.out.println("Input mismatch exception");	
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			System.out.println("This is the finally statement");
+		}
+		
+	}
 }
